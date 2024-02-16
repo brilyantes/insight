@@ -1,0 +1,124 @@
+/* INSIGHTS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.img__wrapper{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.img{
+    width:500px;
+    position:relative;
+}
+img{
+    width:100%;
+    display:block;
+    margin:auto;
+}
+.img__content{
+    width:70%;
+    height:70%;
+    top:15%;
+    left:15%;
+    position:absolute;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    opacity:0;
+    transition:0.4s;
+    transition-timing-function:ease-out;
+}
+.overlay:before{
+    content:"";
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7) 0;
+    opacity:1;
+    transition:opacity 0.3s,\background 0.3s;
+    position:absolute;
+}
+.overlay:hover:before{
+    scale:0;
+    transition:.5s ease;
+}
+.images:hover .overlay{
+    height:100%;
+}
+.img__content:hover{
+    opacity:1;
+}
+.img__content h1{
+    font-size:2rem;
+    color:#ffffff;
+}
+.img__content p{
+    font-size:1rem;
+    color:#fff;
+    padding:4rem;
+    text-align:justify;
+}
+.img__content > *{
+    transform:translateXY(25px);
+    transition: transform 0.4s;
+}
+.img__content:hover > *{
+    transform:translateXY(0px);
+}
+.img__content:hover:before{
+    opacity:1;
+    scale:1.1;
+    transition:.5s ease-in;
+}
+.img__content:hover:after{
+    transition:.5s ease-in;
+}.img__content:before{
+    width:70%;
+    height:70%;
+    top:15%;
+    left:15%;
+    position:absolute;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    opacity:0;
+    transition:0.4s;
+    transition-timing-function:ease-out;
+}
+
+
+/* REPEATABLE PATTERNS */
+:root{
+    --dark:dark;
+    --light:white;
+    --primary:red;
+}
+.btn{
+display:inline-block;
+padding:1rem 1.5rem;
+border-radius:5rem;
+border:1px solid transparent;
+text-align:center;
+transition:.5s ease;
+text-decoration: none;
+}
+.btn.bg--primary{
+background:var(--primary);
+color:grey;
+}
+.btn.bg--primary:hover{
+background:rgba(0,0,0,0.7) 0;
+border:1px solid red;
+scale:1.1;
+transition:.5s ease;
+}
